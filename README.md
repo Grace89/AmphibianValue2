@@ -7,6 +7,3 @@ There are 2 files:
 (1) Disease_EV.R = the code and steps used for the cost avoidance analysis
 
 (2) DiseaseValues.csv = the values used to plug into cost avoidance analysis
-
-
-ADW - testing, testing, testing...is this mic turned on? [It worked!]
