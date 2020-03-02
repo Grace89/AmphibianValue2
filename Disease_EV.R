@@ -61,11 +61,16 @@ prop_disease ~ dnorm(0.5, 0.01)T(0,1)
 # 3. Estimate the numbser of human lives and medical costs saved by amphibian presence
 
 ##Equations to estimate total cost and deaths would look something like this
-  #cost_per_case ~ dnorm(cost_per_case_MEAN, 1/(cost_per_case_SD^2))
-  #prob_death_per_case ~ dnorm(prob_death_per_case_MEAN, 1/(death_per_case_SD^2))T(0,1) 
-  #annual_cases ~ dnorm(cases_per_year_MEAN, 1/(cases_per_year_SD^2))
-  #cost_per_year <- annual_cases*cost_per_case
-  #death_per_year <- annual_cases*prob_death_per_case
+
+#So I think the struggle below is how to connect the variables below to the equations above????
+  #All the things below can be supplied as data. 
+
+#Calculating cost and deaths per year given the number of annual cases
+cost_per_case ~ dnorm(cost_per_case_MEAN, 1/(cost_per_case_SD^2))  
+prob_death_per_case ~ dnorm(prob_death_per_case_MEAN, 1/(death_per_case_SD^2))T(0,1) 
+annual_cases ~ dnorm(cases_per_year_MEAN, 1/(cases_per_year_SD^2)) 
+cost_per_year <- annual_cases*cost_per_case
+death_per_year <- annual_cases*prob_death_per_case
 
 
 
