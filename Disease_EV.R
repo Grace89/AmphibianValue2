@@ -54,23 +54,25 @@ mu <- 5
 # Seroprevalence
 prop_disease ~ dnorm(0.5, 0.01)T(0,1)
 
+#Infection rate per person relative to mosquito abundance
+  #infection_rate <- ?????
 
 # 2. Estimate the reduced cost of pesticide use - private and social- attributed to the presence of amphibians
 
 
 # 3. Estimate the numbser of human lives and medical costs saved by amphibian presence
 
-##Equations to estimate total cost and deaths would look something like this
+#The cost and probabilty of death per case
+cost_per_case ~ dnorm(cost_per_case_MEAN, 1/(cost_per_case_SD^2))  ## HAVE DATA FOR MEAN/SD
+prob_death_per_case ~ dnorm(prob_death_per_case_MEAN, 1/(death_per_case_SD^2))T(0,1)  ## HAVE DATA FOR MEAN/SD
 
-#So I think the struggle below is how to connect the variables below to the equations above????
-  #All the things below can be supplied as data. 
+#The number of cases per year 
+annual_cases ~ dpois(human_pop*infection_rate) ## HAVE DATA TO DESCRIBE ANNUAL CASES
+  #annual_cases ~ dnorm(cases_per_year_MEAN, 1/(cases_per_year_SD^2)) ## HAVE DATA for MEAN/SD 
 
 #Calculating cost and deaths per year given the number of annual cases
-cost_per_case ~ dnorm(cost_per_case_MEAN, 1/(cost_per_case_SD^2))  
-prob_death_per_case ~ dnorm(prob_death_per_case_MEAN, 1/(death_per_case_SD^2))T(0,1) 
-annual_cases ~ dnorm(cases_per_year_MEAN, 1/(cases_per_year_SD^2)) 
-cost_per_year <- annual_cases*cost_per_case
-death_per_year <- annual_cases*prob_death_per_case
+cost_per_year <- annual_cases*cost_per_case ## Derived Parameter
+death_per_year <- annual_cases*prob_death_per_case ## Derived parameter
 
 
 
