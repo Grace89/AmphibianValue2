@@ -17,7 +17,7 @@
 # 7. Figures
 
 # 0. Set working directory -------------------------------------------------
-
+  #Is already set in the R project file when you link the Github repo to your computer
 
 # 1. Load packages --------------------------------------------------------
 
