@@ -31,8 +31,14 @@ model {
 
 # 1. Estimate the value of medical expenses that would have been spent in the absence of the amphibians
 
-# Unit of analysis: individual amphibian 
+# Need to calculate the total number of human infections avoided with the presence of amphibians- then we can multiple this by the average medical expense per case (etc.)
 
+    # Unit of analysis: individual amphibian 
+    
+    # Spatial scale:
+    
+    # Temporal scale: An entire summer?
+    
 # Because the most effective way of controlling mosquito populations is via reductions in reproduction, our goal is to estimate the number of larvae prevented from reaching maturity by the presence of a single amphibian.
 
 # The overall impact on human society is estimated by scaling up our population estimates of a single amphibian to amphibian population in the study area.
@@ -57,10 +63,20 @@ prop_disease ~ dnorm(0.5, 0.01)T(0,1)
 #Infection rate per person relative to mosquito abundance
   #infection_rate <- ?????
 
+# Medical costs accumulated per mosquito
+medical ~ dnorm(100, 0.01)
+    
+# The average consumption of mosquito larvae that cause disease by amphibian larvae = (the size of 1 amphibian * how many mosquitos the amphibian eats) * the proportion of mosquitors that cause disease * the total abundance of amphibians in the area
+mosquitosEaten = ((weight * consumption) * prop_disease) * abundance
+    
+# Cost avoided = total number of mosquitos eaten that would have caused disease * medical expenses that those diseases would have caused
+Expenses = mosquitosEaten * medical
+    
+
 # 2. Estimate the reduced cost of pesticide use - private and social- attributed to the presence of amphibians
 
 
-# 3. Estimate the numbser of human lives and medical costs saved by amphibian presence
+# 3. Estimate the numbser of human lives saved by amphibian presence
 
 #The cost and probabilty of death per case
 cost_per_case ~ dnorm(cost_per_case_MEAN, 1/(cost_per_case_SD^2))  ## HAVE DATA FOR MEAN/SD
@@ -84,20 +100,25 @@ sink()
 
 # 3. MCMC settings --------------------------------------------------------
 
-ni <- 50000
-nb <- 10000
-nt <- 50
+ni <- 500
+nb <- 10
+nt <- 5
 nc <- 3
-na <- 10000
+na <- 100
 
 # 4. Bundle data & initial values --------------------------------------------
 
+# Read in data
+dat <- read.csv("DiseaseValues.csv")
+str(dat)
+
 # Bundle data
-jags.data <- list(
+jags.data <- list(weight_mean = dat[dat$Variable == "Amph_weight", ]$Mean,
+                  weight_prec = 1/(dat[dat$Variable == "Amph_weight", ]$SD)^2
 )
 
 # List parameters to moniter
-params <- c()
+params <- c("Expenses")
 
 # Initial values
 inits <- function(){list(
@@ -108,7 +129,8 @@ out <- jags(data = jags.data, inits = inits, parameters.to.save = params,
             model.file = "model.txt", 
             n.chains = nc, n.thin = nt, 
             n.iter = ni, n.burnin = nb, n.adapt = na,
-            parallel = TRUE)
+            parallel = TRUE,
+            DIC = FALSE)
 
 # 6. Check output ---------------------------------------------------------
 
@@ -119,5 +141,4 @@ which(unlist(out$Rhat) > 1.1)
 plot(out)
 
 # 7. Figures --------------------------------------------------------------
-
 
