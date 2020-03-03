@@ -68,7 +68,10 @@ medical ~ dnorm(100, 0.01)
     
 # The average consumption of mosquito larvae that cause disease by amphibian larvae = (the size of 1 amphibian * how many mosquitos the amphibian eats) * the proportion of mosquitors that cause disease * the total abundance of amphibians in the area
 mosquitosEaten = ((weight * consumption) * prop_disease) * abundance
-    
+
+# Number of human cases per mosquito?? 1 mosquito = 1 human infection?
+
+  
 # Cost avoided = total number of mosquitos eaten that would have caused disease * medical expenses that those diseases would have caused
 Expenses = mosquitosEaten * medical
     
