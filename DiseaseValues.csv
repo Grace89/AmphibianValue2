@@ -1,0 +1,6 @@
+﻿Variable,Units,Study,species,Min,Max,Mean,SD,SE,lower95,upper95
+Amph_weight,,,,,,,,,,
+Amph_abundance,,,,,,,,,,
+consumption,numbers of mosquito larvae per day,,A. talpoideum,,,439,,20,,
+proportionInfected,,,,,,,,,,
+consumption,numbers of mosquito larvae per day,,N. v. viridescens,,,316,,35,,
