@@ -35,9 +35,9 @@ model {
 
     # Unit of analysis: individual amphibian 
     
-    # Spatial scale:
+    # Spatial scale: United States
     
-    # Temporal scale: An entire summer?
+    # Temporal scale: Annual
     
 # Because the most effective way of controlling mosquito populations is via reductions in reproduction, our goal is to estimate the number of larvae prevented from reaching maturity by the presence of a single amphibian.
 
@@ -61,7 +61,7 @@ mu <- 5
 prop_disease ~ dnorm(0.5, 0.01)T(0,1)
 
 #Infection rate per person relative to mosquito abundance
-  #infection_rate <- ?????
+  # infection_rate <- ?????
 
 # Medical costs accumulated per mosquito
 medical ~ dnorm(100, 0.01)
@@ -81,15 +81,15 @@ Expenses = mosquitosEaten * medical
 
 # 3. Estimate the numbser of human lives saved by amphibian presence
 
-#The cost and probabilty of death per case
+# The cost and probabilty of death per case
 cost_per_case ~ dnorm(cost_per_case_MEAN, 1/(cost_per_case_SD^2))  ## HAVE DATA FOR MEAN/SD
 prob_death_per_case ~ dnorm(prob_death_per_case_MEAN, 1/(death_per_case_SD^2))T(0,1)  ## HAVE DATA FOR MEAN/SD
 
-#The number of cases per year 
+# The number of cases per year 
 annual_cases ~ dpois(human_pop*infection_rate) ## HAVE DATA TO DESCRIBE ANNUAL CASES
   #annual_cases ~ dnorm(cases_per_year_MEAN, 1/(cases_per_year_SD^2)) ## HAVE DATA for MEAN/SD 
 
-#Calculating cost and deaths per year given the number of annual cases
+# Calculating cost and deaths per year given the number of annual cases
 cost_per_year <- annual_cases*cost_per_case ## Derived Parameter
 death_per_year <- annual_cases*prob_death_per_case ## Derived parameter
 
