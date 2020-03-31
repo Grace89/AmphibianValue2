@@ -1,7 +1,7 @@
 Variable	Units	Study	Lab or experiment?	Source population location	Spatial scale	Season	species	Min	Max	Mean	SD	SE	lower95	upper95
 Amph_weight														
-Amph_abundance	emerged juveniles/per ha	Gibbons et al.	Field		1 10 ha wetland	Feb 2003-Jan2004	All			38612				
-Wet_abundance		USFWS Wetland 2010 Report			contientnal US (48 states)	2009	NA			42200000				
+Amph_abundance	inds/ha	Gibbons et al. 2006	Field	South Carolina	One wetland	One full breeding season (Feb-Jan)	All			38612				
+Wet_abundance	total amount of wetland habitat (in hectares)	USFWS 2010 Wetland Report	Field	National	Continential US (48 states)	2009				42200000				
 consumption	numbers of mosquito larvae per day	DuRant & Hopkins 2008					A. talpoideum			439		20		
 proportionInfected														
 consumption	numbers of mosquito larvae per day	DuRant & Hopkins 2008					N. v. viridescens			316		35		
