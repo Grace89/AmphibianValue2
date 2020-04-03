@@ -17,10 +17,11 @@ Incidence,Total annual # of reported cases (2017),Curren et al. 2018,Field,48 St
 Proportion_of_diet_is_mosquito,percent of diet = Culicidae,Blum et al. 1997,,,,,"2,163 anuran specimens",,,0.16,,,,
 Percent_mosquito_consumed,% of mosquito eggs consumed,Bowatte et al. 2013,Lab,"_puddles at the
 University of Peradeniya, Sri Lanka",NA,NA,Polypedates cruciger,,,0.875,,,,
-Percent_mosquito_consumed,% of mosquito eggs consumed,Rubbo et al. 2011,Lab,"Seasonal pools in northern Westchester County, NY to",NA,_summer of 2009,Ambystoma maculatum,,,0.95,,,,
+Percent_mosquito_consumed,% of mosquito eggs consumed,Rubbo et al. 2011,Lab,"Seasonal pools in northern Westchester County, NY to",NA,summer of 2009,Ambystoma maculatum,,,0.95,,,,
 Percent_mosquito_consumed,% of mosquito eggs consumed,Brodman et al. 2003,Lab,NA,NA,NA,_Ambystoma,,,,,,0.91,0.94
-Percent_mosquito_consumed,% of mosquito eggs consumed,Brodman et al. 2003,Field,"24 wetland sites in Jasper, Pulaski, and White Counties in northwest Indiana for",NA,"_early April, late April, early May and late May",Salamander larvae,,,0.98,,,,
-Percent_mosquito_consumed,% of mosquito eggs consumed,Blaustein et al. 2014,Lab,"_Galilee Mountains, Israel",NA,_March and April 2010,_Salamandra infraimmaculata larvae,,,0.431,,,,
-Percent_mosquito_consumed,% of mosquito eggs consumed,Blaustein et al. 2014,Lab,"_Galilee Mountains, Israel",NA,_March and April 2010,Ambystoma 9:9tigrinum,,,0.5,,,,
+Percent_mosquito_consumed,% of mosquito eggs consumed,Brodman et al. 2003,Field,"24 wetland sites in Jasper, Pulaski, and White Counties in northwest Indiana for",NA,"early April, late April, early May and late May",Salamander larvae,,,0.98,,,,
+Percent_mosquito_consumed,% of mosquito eggs consumed,Blaustein et al. 2014,Lab,"_Galilee Mountains, Israel",NA,March and April 2010,_Salamandra infraimmaculata larvae,,,0.431,,,,
+Percent_mosquito_consumed,% of mosquito eggs consumed,Blaustein et al. 2014,Lab,"_Galilee Mountains, Israel",NA,March and April 2010,Ambystoma 9:9tigrinum,,,0.5,,,,
 Larval_density,Density (salamanders/m2) of larval Ambystoma,_Brodman 1995; Cortwright 1988; Stangel 1988; Van Buskirk and Smith 1991,,,,,_Ambystoma,,,,,,27,40
-Amph_weight,,,,,,,,,,,,,,
+Percent_mosquitos_infected,% of mosquitos carrying disease,,,,,,,,,,,,,
+R0,Number of secodary cases per infected mosquito,,,,,,,,,,,,,
